@@ -3,9 +3,13 @@
 
 import { useState } from "react";
 
+interface Props {
+  items: string[];
+  heading: string;
+}
+
 // import { MouseEvent } from "react";
-function ListGroup() {
-  let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+function ListGroup({ items, heading }: Props) {
   // items = [];
   // let selectedIndex = 0; // -1 means no, 0 means first is selected
 
@@ -32,7 +36,7 @@ function ListGroup() {
 
     //with braces we can render anything dynamically
     <>
-      <h1>List</h1>
+      <h1>{heading}</h1>
       {/* {items.length === 0 ? <p>No item found</p> : null} */}
       {items.length === 0 && <p>No item found</p>}
       <ul className="list-group">
